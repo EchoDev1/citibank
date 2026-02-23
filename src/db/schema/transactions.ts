@@ -15,7 +15,7 @@ export const transactions = pgTable("transactions", {
   description: text("description"),
   balanceAfter: decimal("balance_after", { precision: 19, scale: 4 }),
   status: transactionStatusEnum("status").default("pending").notNull(),
-  createdAt: timestamp("created_at").default(sql`CURRENT_TIMESTAMP`).notNull(),
+  createdAt: varchar("created_at").default(sql`CURRENT_TIMESTAMP`).notNull(),
   metadata: jsonb("metadata"),
 });
 
