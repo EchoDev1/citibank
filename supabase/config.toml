@@ -1,0 +1,28 @@
+# Supabase Configuration for Citibank Banking Platform
+# This file is for local Supabase development (optional)
+
+[project]
+name = "citibank-banking"
+
+[database]
+# Connection pooling settings
+pooler_enabled = true
+pooler_mode = "session"
+connection_limit = 100
+
+[auth]
+# Enable email/password authentication
+enabled = true
+email_enabled = true
+email_confirm = false # Set to true in production
+
+# Session settings
+jwt_expiry = 604800 # 7 days in seconds
+
+[storage]
+# File storage (for future features like document uploads)
+enabled = false
+
+[functions]
+# Edge functions (for future features)
+enabled = false
