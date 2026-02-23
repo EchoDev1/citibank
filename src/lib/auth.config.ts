@@ -25,6 +25,7 @@ export const authConfig = {
     strategy: "jwt",
     maxAge: 7 * 24 * 60 * 60, // 7 days
   },
+  secret: process.env.AUTH_SECRET || "3QknMGMKwpp33yqCFJ46SdvVodO82R6GXsZ7dmIIsPw=",
   pages: {
     signIn: "/login",
   },

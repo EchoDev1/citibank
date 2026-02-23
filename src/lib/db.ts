@@ -5,7 +5,9 @@ import postgres from "postgres";
 import * as schemaSQLite from "@/db/schema-sqlite";
 import * as schemaPostgres from "@/db/schema";
 
-const connectionString = process.env.DATABASE_URL || "file:./local.db";
+const connectionString = process.env.DATABASE_URL && process.env.DATABASE_URL !== "file:./local.db"
+  ? process.env.DATABASE_URL
+  : "postgresql://postgres.byjpaxkzmvrihzedqnia:COlded9090!@aws-1-eu-west-1.pooler.supabase.com:5432/postgres";
 
 // Detect database type
 const isSQLite = connectionString.startsWith("file:");
