@@ -59,6 +59,7 @@ export function LoginForm() {
                 type="email"
                 placeholder="User ID"
                 value={email}
+                autoComplete="username"
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={isLoading}
@@ -74,6 +75,7 @@ export function LoginForm() {
                   type="password"
                   placeholder="Password"
                   value={password}
+                  autoComplete="current-password"
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={isLoading}

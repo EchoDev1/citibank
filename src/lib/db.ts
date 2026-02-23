@@ -27,7 +27,10 @@ if (isSQLite) {
   client = sqlite;
 } else {
   // PostgreSQL setup for Supabase/Production
-  const pgClient = postgres(connectionString, { prepare: false });
+  const pgClient = postgres(connectionString, {
+    prepare: false,
+    ssl: { rejectUnauthorized: false }
+  });
 
   db = drizzlePostgres(pgClient, { schema: schemaPostgres });
   client = pgClient;
